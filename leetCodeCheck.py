@@ -1,9 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 
-# Group member IDs
+# Replaced with group member IDs
 user_ids = ['','','']
-# How many problems we should solved today
+# How many problems this group should solved today
 threhold = 2
 
 user_url_list = []
@@ -32,8 +32,12 @@ for id in user_ids:
                 finished_today.append(recent_submissions)
     if(len(finished_today) >= threhold):
         print (id + " finished today's work!!!")
+        for submission in finished_today:
+            print (submission)
     else:
         print (id + " should give", threhold - len(finished_today), "red pocket!!!")
+        for submission in finished_today:
+            print (submission)
 
 
 
